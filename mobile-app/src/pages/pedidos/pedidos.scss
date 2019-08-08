@@ -1,0 +1,75 @@
+page-pedidos {
+    
+    //Cor do plano de fundo da página
+    .scroll-content{
+        background-color: rgba(220, 220, 220, 0.2);
+    }
+    
+    //Cor do plano de fundo do cabeçalho
+    .toolbar-background {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    //Cor do título da página
+    .toolbar-title-md {
+        color: white;
+    }
+
+    .item-md.item-block .item-inner {
+        border-bottom: 0px solid transparent;
+    }
+
+    //Configurações do item
+    ion-item.item.item-block.item-md {
+        height: 80px;
+        background-color: transparent;
+        border-bottom: 1.1px solid rgba(207, 207, 207, 0.8);
+    }
+
+    ion-item.item.item-block.item-md:last-child {
+        border-bottom: none;
+    }
+
+    ion-item.item.item-block.item-md:first-child {
+        border-bottom: none;
+        background-color: rgba(0, 0, 0, 0.8);
+        text-align: center;
+        height: 60px;
+    }
+
+    .nome_user {
+        color: rgba(255, 255, 255, 0.9);
+        letter-spacing: 0.5px;
+        font-size: 16px;
+    }
+
+    .quarto_user {
+        color: rgba(178, 176, 176, 0.7);
+        font-size: 12.5px;
+        letter-spacing: 0.2px;
+    }
+
+    .texto_pedido {
+        margin-bottom: 7px;
+    }
+
+    .checkout {
+        color: rgba(239, 56, 73, 1);
+        font-weight: 700;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 7px;
+    }
+
+    .conta {
+        font-weight: 700;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .texto_conta {
+        color: rgba(0, 192, 0, 0.9);
+        font-weight: 700;
+    }
+
+}

@@ -1,0 +1,65 @@
+<nav class="navbar navbar-default" id="navbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" ng-controller="headerCtrl">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a ng-class="{active:isActive('/menu')}" href="#!/menu">Menu</a></li>
+        <li><a ng-class="{active:isActive('/pedidos')}" href="#!/pedidos">Pedidos</a></li>
+        <li><a id="sair" href="#!/login">Log Out</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<h1 class="titulo">Pedidos</h1>
+
+<div id="tabela_pedidos"
+  class="col-xs-8 col-sm-8 col-md-8 col-lg-6 col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-3">
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Pedido</th>
+        <th scope="col">Hóspede</th>
+        <th scope="col">Quarto</th>
+        <th scope="col">Status</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody ng-repeat="pedido in pedidos">
+      <tr>
+        <td>{{ pedido.nome }}</td>
+        <td>{{ pedido.usuario }}</td>
+        <td>{{ pedido.quarto }}</td>
+        <td>{{ pedido.status }}</td>
+        <td><span ng-if="pedido.status === 'Entregue'" class="glyphicon glyphicon-ok icon_ok"></span><span
+            ng-if="pedido.status === 'Aberto'" class="glyphicon glyphicon-time icon_remove" data-toggle="modal"
+            data-target="#modalValidar" ng-click="enviarNomeModal(pedido)"></span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="modal fade" id="modalValidar" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal_entregue modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle"><strong id="titulo_modal"></strong></h5>
+            </div>
+            <div class="modal-body">
+                <h5 id="texto_modal"><strong></strong></h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger adicionar" ng-click="editarStatus()">Yes</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

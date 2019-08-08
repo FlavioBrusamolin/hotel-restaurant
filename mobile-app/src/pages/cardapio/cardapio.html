@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Menu</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)" class="refresher">
+    <ion-refresher-content
+        refreshingSpinner="circles">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-searchbar [(ngModel)]="terms"></ion-searchbar>
+  <ion-list>
+    <ion-item style="background-color:transparent;" *ngFor="let prato of pratos | search : terms">
+      <ion-row>
+        <ion-col col-5>
+          <img src="http://localhost:9000/images/{{ prato.file }}" class="ajuste_imagem" />
+        </ion-col>
+        <ion-col col-5 class="texto" text-wrap>
+          <h2 class="nome_prato">{{ prato.nome }}</h2>
+          <h3 class="descricao_prato">{{ prato.descricao }}</h3>
+        </ion-col>
+        <ion-col col-2 class="valor">
+          <h4 class="valor_prato">$ {{ prato.valor }}</h4>
+          <button class="button_add" (click)="cadastrarPedido(prato)">
+            <ion-icon class="add" name="add-circle"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-list>
+</ion-content>

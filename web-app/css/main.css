@@ -1,0 +1,45 @@
+body {
+	background-image:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(../images/cozinha.jpg);
+	width:100%;
+	height:100vh;
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:cover;
+}
+
+nav#navbar {
+	margin:0px;
+	border-radius:0px 0px 0px 0px;
+	border:0px;
+	background-color:rgba(0,0,0,0.8);
+	height:50px;
+	-webkit-box-shadow:0px 6px 19px -2px rgba(0,0,0,0.09);
+	-moz-box-shadow:0px 6px 19px -2px rgba(0,0,0,0.09);
+	box-shadow:0px 6px 19px -2px rgba(0,0,0,0.09);
+	margin-bottom:40px;
+}
+
+.active {
+	border-top:1.9px solid #d7d5d4;
+	-webkit-box-shadow:0px 0px 48px 10px rgba(0,0,0,0.36);
+	-moz-box-shadow:0px 0px 48px 10px rgba(0,0,0,0.36);
+	box-shadow:0px -2px 30px 3px rgba(0,0,0,0);
+}
+
+.navbar-default .navbar-nav > li > a {
+	font-size:13px;
+	letter-spacing:1px;
+	color:#eaeef1;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+	color:rgba(255, 132, 144, 0.945);
+}
+
+.titulo {
+	text-align:center;
+	color:white;
+	font-size:55px;
+	font-family:'Kalam', cursive;
+	margin-bottom:0px;
+}

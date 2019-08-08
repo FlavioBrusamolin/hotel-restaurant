@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="titulo">
+      Leucotron's Kitchen
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="login">
+  <ion-list>
+    <ion-item class="item">
+      <ion-label style="color:rgba(0, 0, 0, 0.9);" stacked>E-mail:</ion-label>
+      <ion-input type="email" [(ngModel)]="cliente.email" placeholder="Insira seu e-mail"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label style="color:rgba(0, 0, 0, 0.9);" stacked>Senha:</ion-label>
+      <ion-input type="password" [(ngModel)]="cliente.senha" placeholder="Insira sua senha"></ion-input>
+    </ion-item>
+    <button full ion-button style="background-color:rgba(239, 56, 73, 0.9);" id="botao_entrar" (click)="autenticarCliente()">ENTRAR</button>
+  </ion-list>
+  <a id="labels1" ion-item (click)="novaconta()">
+    <ion-label>Criar nova conta</ion-label>
+  </a>
+  <a id="labels2" ion-item>
+    <ion-label>Esqueceu sua senha?</ion-label>
+  </a>
+</ion-content>

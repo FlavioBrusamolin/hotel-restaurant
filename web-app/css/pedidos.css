@@ -1,0 +1,51 @@
+div#tabela_pedidos {
+    background-color:white;
+    border-radius:10px;
+    margin-top:25px;
+    overflow:auto;
+}
+
+div#tabela_pedidos thead th {
+    height:35px;
+    line-height:35px;
+    text-align:center;
+}
+
+div#tabela_pedidos tr {
+    text-align:center;
+    word-break:break-all;
+}
+
+.icon_ok {
+    color:rgb(2, 197, 2);
+}
+
+.icon_remove {
+    /* color:rgba(239, 56, 73, 0.9); */
+    color:rgba(217, 15, 217, 0.85);
+    cursor:pointer;
+    font-weight: bolder;
+    font-size:18px;
+}
+
+.modal_entregue {
+    width:25%;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+	.modal_entregue {
+		width:30%;
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+	.modal_entregue {
+		width:40%;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.modal_entregue {
+		width:95%;
+    }
+}

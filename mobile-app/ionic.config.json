@@ -1,0 +1,7 @@
+{
+  "name": "kitchenMobile",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

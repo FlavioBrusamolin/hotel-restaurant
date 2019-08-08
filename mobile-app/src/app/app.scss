@@ -1,0 +1,11 @@
+.tabs-md .tabbar {
+    background: rgba(220, 220, 220, 0.5);
+}
+
+.tabs-md .tab-button[aria-selected=true] {
+    color: rgba(239, 56, 73, 1);
+}
+
+.tabs-md .tab-button[aria-selected=true] .tab-button-icon {
+    color: rgba(239, 56, 73, 1);
+}

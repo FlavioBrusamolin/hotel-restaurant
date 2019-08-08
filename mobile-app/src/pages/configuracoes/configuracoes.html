@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Configurações</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-item class="usuario">
+    <img src="assets/imgs/perfil.png" id="avatar" class="perfil">
+    <h2 style="color: white;" text-align="middle">{{ user }}</h2>
+  </ion-item>
+  <button ion-button icon-left class="buttonconfig" col-12>
+    <ion-icon name="create" style="color: black;"></ion-icon>
+    <h2 class="text">Editar Perfil</h2>
+  </button>
+  <button ion-button icon-left class="buttonconfig" col-12>
+    <ion-icon name="help-circle" style="color: black;"></ion-icon>
+    <h2 class="text">Ajuda</h2>
+  </button>
+  <button ion-button icon-left class="buttonconfig" col-12>
+    <ion-icon name="settings" style="color: black;"></ion-icon>
+    <h2 class="text">Geral</h2>
+  </button>
+  <ion-footer>
+    <button ion-button icon-left class="buttonconfig footer" (click)="exit()" col-12>
+      <ion-icon name="log-out" style="color: black;"></ion-icon>
+      <h2 class="text">Sair</h2>
+    </button>
+  </ion-footer>
+</ion-content>

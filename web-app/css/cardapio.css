@@ -1,0 +1,197 @@
+.card {
+	background-color:white;
+	height:110px;
+	border-radius:5px;
+	margin-top:25px;
+	margin-bottom:5px; 
+	padding:0;
+}
+
+.foto {
+	padding-top:15px;
+	padding-left:17px;
+	height:110px;
+}
+
+.ajuste_imagem {
+	border-radius:5px;
+}
+
+.texto {
+	height:110px;
+	padding-left:0px;
+	word-wrap:break-word;
+}
+
+.nome_prato {
+	font-size:18px;
+	color:black;
+	letter-spacing:0.5px;
+	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-weight:bolder;
+	margin-top:14px;
+}
+
+.descricao_prato {
+	font-size:13px;
+	color:rgba(128, 128, 128, 0.7);
+	letter-spacing:0.5px;
+	font-weight:bolder;
+}
+
+.preco {
+	height:110px;
+	text-align:right;
+}
+
+.preco_texto {
+	font-size:17px;
+	/* margin-left:30px; */
+	font-weight:bolder;
+	/* margin-top:17px; */
+}
+
+.excluir {
+	/* margin-left:47px; */
+	margin-top:23px;
+	height:25px;
+	width:25px;
+	background-color:rgba(239, 56, 73, 0.9);
+	color:white;
+	border:none;
+	border-radius:5px;
+	outline:thin dotted;
+	outline:0px auto -webkit-focus-ring-color;
+	outline-offset:0px;
+}
+
+.add {
+	height:40px;
+	border-radius:50%;
+	width:40px;
+	margin-left:20px;
+	border:none;
+	outline:thin dotted;
+	outline:0px auto -webkit-focus-ring-color;
+	outline-offset:0px;
+}
+
+.modal { 
+	position:fixed;
+	top:50%;
+	margin-top:-200px;
+	height:400px;
+}
+
+.modal-header {
+	border:none;
+	text-align:center;
+}
+
+.modal-title {
+	color:black;
+	font-size:15px;
+	letter-spacing:0.3;
+}
+
+.modal-body {
+	text-align:left;
+	padding-top:5px;
+	padding-bottom:0px;
+}
+
+.modal_adicionar {
+	width:35%;
+}
+
+.input-modal {
+	border-bottom:1px solid rgba(0,0,0,0.2);
+	color:black;
+	margin-bottom:20px;
+	font-size:14px;
+	letter-spacing:0.3px;
+}
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance:none;
+}
+
+.modal-footer {
+	border:none;
+}
+
+.adicionar {
+	background-color:rgba(239, 56, 73, 0.9);
+}
+
+.inputfile {
+	width:0.1px;
+	height:0.1px;
+	opacity:0;
+	overflow:hidden;
+	position:absolute;
+	z-index:-1;
+}
+
+.inputfile + label {
+    font-size:14px;
+    font-weight:700;
+    color:white;
+    background-color:rgba(157, 157, 157, 0.8);
+	display:inline-block;
+	border-radius:5px;
+	padding:5px;
+	margin-bottom:0;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color:rgba(0,0,0,0.5);
+}
+
+.inputfile + label {
+	cursor:pointer;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #F4F4F4;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    background: #F4F4F4;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #dad7d7;
+}
+
+@media only screen and (max-width: 768px) {
+	.foto {
+		display:none;
+	}
+	
+	.texto {
+		padding-left: 20px;
+	}
+
+	.preco {
+		text-align:center;
+	}
+
+	.preco_texto {
+		margin-top:16px;
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+	.modal_adicionar {
+		width:50%;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.modal_adicionar {
+		width:95%;
+	}
+}

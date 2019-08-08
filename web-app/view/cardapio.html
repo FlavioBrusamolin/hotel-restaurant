@@ -1,0 +1,87 @@
+<nav class="navbar navbar-default" id="navbar">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" ng-controller="headerCtrl">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a ng-class="{active:isActive('/menu')}" href="#!/menu">Menu</a></li>
+                <li><a ng-class="{active:isActive('/pedidos')}" href="#!/pedidos">Pedidos</a></li>
+                <li><a id="sair" href="#!/login">Log Out</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<h1 class="titulo">Menu</h1>
+
+<button type="button" class="add glyphicon glyphicon-plus" data-toggle="modal" data-target="#modalAdd"
+    ng-click="limparModal()"></button>
+
+<div class="card col-xs-10 col-sm-10 col-md-8 col-lg-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-2 col-lg-offset-3"
+    ng-repeat="prato in pratos">
+    <div class="foto col-xs-0 col-sm-3 col-md-3 col-lg-3">
+        <img ng-src="http://localhost:9000/images/{{ prato.file }}" class="ajuste_imagem" alt="prato" />
+    </div>
+    <div class="texto col-xs-9 col-sm-7 col-md-7 col-lg-7">
+        <h2 class="nome_prato">{{ prato.nome }}</h2>
+        <h4 class="descricao_prato">{{ prato.descricao }}</h4>
+    </div>
+    <div class="preco col-xs-3 col-sm-2 col-md-2 col-lg-2">
+        <h3 class="preco_texto">${{ prato.valor }}</h3>
+        <button type="button" class="excluir glyphicon glyphicon-remove" data-toggle="modal"
+            data-target="#modalDelete" ng-click="enviarNomeModal(prato)"></button>
+    </div>
+</div>
+
+<div class="modal fade" id="modalAdd" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal_adicionar modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle"><strong>Adicione um novo prato ao cardápio.</strong>
+                </h5>
+            </div>
+            <div class="modal-body">
+                <input type="textarea" class="form-control input-modal" name="nome" ng-model="prato.nome"
+                    placeholder="Nome do prato">
+                <input type="textarea" class="form-control input-modal" name="descricao" ng-model="prato.descricao"
+                    placeholder="Principais ingredientes">
+                <input type="number" class="form-control input-modal" name="valor" ng-model="prato.valor"
+                    placeholder="Valor">
+                <form id="form" action="http://localhost:9000/upload" method="POST" enctype="multipart/form-data">
+                    <input type="file" name="file" id="file" class="inputfile" />
+                    <label for="file">Selecione uma foto</label>
+                    <!-- <input type="submit" value="Submit" class="btn btn-primary"> -->
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger adicionar" ng-click="cadastrar(prato)">Add</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal_entregue modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle"><strong id="titulo_modal"></strong></h5>
+            </div>
+            <div class="modal-body">
+                <h5>O prato será excluído do cardápio. Tem certeza?</h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger adicionar" ng-click="excluir()">Delete</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
